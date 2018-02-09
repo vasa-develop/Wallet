@@ -23,10 +23,7 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
 
-        <activity android:name=".MainActivity" />
-        <activity
-            android:name=".Application"
-            android:screenOrientation="portrait" />
+        <activity android:name=".KYCActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -41,13 +38,10 @@
         <activity android:name=".Wallet">
 
         </activity>
-        <activity android:name=".AuthProtocol">
+        <activity android:name=".AuthProtocol_mobile">
 
         </activity>
-        <activity android:name=".Auth">
-
-        </activity>
-        <activity android:name=".WebSocket">
+        <activity android:name=".Authprotocol_web">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

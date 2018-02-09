@@ -1,41 +1,16 @@
 package com.vasa.vaibhav.example_wallet;
 
-import android.Manifest;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.SparseArray;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.vision.Frame;
-import com.google.android.gms.vision.barcode.Barcode;
-import com.google.android.gms.vision.barcode.BarcodeDetector;
-
-import org.ethereum.geth.EthereumClient;
-import org.ethereum.geth.Geth;
-import org.ethereum.geth.Header;
-import org.ethereum.geth.NewHeadHandler;
-import org.ethereum.geth.Node;
-import org.ethereum.geth.NodeConfig;
-import org.ethereum.geth.NodeInfo;
 import org.web3j.crypto.CipherException;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.WalletUtils;
@@ -43,18 +18,14 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.Web3jFactory;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tuples.Tuple;
-import org.web3j.tx.*;
 import org.web3j.tx.Contract;
 import org.web3j.tx.ManagedTransaction;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigInteger;
 
-import io.ipfs.api.IPFS;
-
-public class MainActivity extends AppCompatActivity {
+public class KYCActivity extends AppCompatActivity {
 
     private TextView name,email,mobile_no;
     private String name_,email_;
@@ -109,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         try{
             Intent intent = getIntent();
             if(intent.getBooleanExtra("request_kyc",false)){
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(KYCActivity.this);
                 builder.setMessage("VasaCart wants to access your KYC info.")
                         .setPositiveButton("give access", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

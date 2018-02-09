@@ -302,7 +302,7 @@ public class Wallet extends AppCompatActivity {
                 Log.d("V: ", String.valueOf((signMessage.getV())));
 
                 Intent myIntent = new Intent();
-                myIntent.setClassName("com.vasa.vaibhav.vasacart", "com.vasa.vaibhav.vasacart.AuthProtocol");
+                myIntent.setClassName("com.vasa.vaibhav.vasacart", "com.vasa.vaibhav.vasacart.AuthProtocol_mobile");
                 myIntent.putExtra("R", (signMessage.getR().clone()));
                 myIntent.putExtra("S", (signMessage.getS().clone()));
                 myIntent.putExtra("V", signMessage.getV());
@@ -443,7 +443,7 @@ public class Wallet extends AppCompatActivity {
             Log.d("wallet_balance: ",bal);
             if(trasactionIntent){
                 Intent myIntent = new Intent();
-                myIntent.setClassName("com.vasa.vaibhav.vasacart", "com.vasa.vaibhav.vasacart.MainActivity");
+                myIntent.setClassName("com.vasa.vaibhav.vasacart", "com.vasa.vaibhav.vasacart.KYCActivity");
                 myIntent.putExtra("hash",hash); // key/value pair, where key needs current package prefix.
                 startActivity(myIntent);
             }

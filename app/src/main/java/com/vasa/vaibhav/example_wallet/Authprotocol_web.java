@@ -1,6 +1,5 @@
 package com.vasa.vaibhav.example_wallet;
 
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -18,32 +17,24 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
-import org.apache.commons.codec.binary.Base64;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
-import java.net.Socket;
-import java.net.SocketAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.PublicKey;
 import java.util.StringTokenizer;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
-
 import tech.gusavila92.websocketclient.WebSocketClient;
-import tech.gusavila92.websocketclient.common.Utils;
 
-public class WebSocket extends AppCompatActivity {
+public class Authprotocol_web extends AppCompatActivity {
 
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
@@ -91,7 +82,7 @@ public class WebSocket extends AppCompatActivity {
             public void surfaceCreated(SurfaceHolder holder) {
                 try {
                     //noinspection MissingPermission
-                    if (ActivityCompat.checkSelfPermission(WebSocket.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(Authprotocol_web.this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
                         //    ActivityCompat#requestPermissions
                         // here to request the missing permissions, and then overriding
